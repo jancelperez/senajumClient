@@ -1,0 +1,32 @@
+{
+  "name": "senagram-client",
+  "version": "1.0.0",
+  "description": "senajum api client",
+  "main": "index.js",
+  "scripts": {
+    "lint": "standard",
+    "test": "npm run lint && ava"
+  },
+  "standard": {
+    "parser": "babel-eslint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jancelperez/senajumClient.git"
+  },
+  "keywords": [
+    "senajum"
+  ],
+  "author": "jancel perez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jancelperez/senajumClient/issues"
+  },
+  "homepage": "https://github.com/jancelperez/senajumClient#readme",
+  "devDependencies": {
+    "ava": "^0.24.0",
+    "babel-eslint": "^8.0.3",
+    "standard": "^10.0.3",
+    "uuid-base62": "^0.1.0"
+  }
+}
