@@ -30,6 +30,7 @@
     "uuid-base62": "^0.1.0"
   },
   "dependencies": {
+    "bluebird": "^3.5.1",
     "nock": "^9.1.6",
     "request": "^2.83.0",
     "request-promise": "^4.2.2"

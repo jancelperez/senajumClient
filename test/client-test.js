@@ -34,7 +34,7 @@ test('cliente', t => {
 test('getPicture', async t => {
   const client = t.context.client
 
-  let imagen = toString(fixtures.getImagen())
+  let imagen = fixtures.getImagen()
 
   nock(options.endpoints.pictures)
   .get(`/${imagen.publicId}`)
@@ -42,9 +42,9 @@ test('getPicture', async t => {
 
   let result = await client.getPicture(imagen.publicId)
 
-  console.log(result)
+  console.log(imagen)
 
-  console.log(typeof result)
+  console.log(result)
 
   t.deepEqual(imagen, result)
 })

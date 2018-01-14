@@ -6,15 +6,15 @@ const fixtures = {
   getImagen () {
     let id = uuid.uuid()
     return {
+      createAt: new Date().toString(),
       description: 'an #awesome picture with #tags #senagram',
+      id: id,
+      liked: false,
+      likes: 0,
+      publicId: uuid.encode(id),
       tags: ['awesome', 'tags', 'senagram'],
       url: `https://senagram.test/${uuid.v4()}.jpg`,
-      likes: 0,
-      liked: false,
-      userId: uuid.uuid(),
-      publicId: uuid.encode(id),
-      id: id,
-      createAt: new Date().toString()
+      userId: uuid.uuid()
     }
   },
   getImagenes (n) {
