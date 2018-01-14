@@ -8,7 +8,7 @@ const fixtures = {
     return {
       description: 'an #awesome picture with #tags #senagram',
       tags: ['awesome', 'tags', 'senagram'],
-      url: `https://senagram.test/${uuid.v4().jpg}`,
+      url: `https://senagram.test/${uuid.v4()}.jpg`,
       likes: 0,
       liked: false,
       userId: uuid.uuid(),
@@ -29,7 +29,7 @@ const fixtures = {
     return {
       id: uuid.uuid(),
       name: 'A random user',
-      username: 'platzigram',
+      username: 'senagram',
       createAt: new Date().toString()
     }
   }

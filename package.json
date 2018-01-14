@@ -28,5 +28,10 @@
     "babel-eslint": "^8.0.3",
     "standard": "^10.0.3",
     "uuid-base62": "^0.1.0"
+  },
+  "dependencies": {
+    "nock": "^9.1.6",
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2"
   }
 }
