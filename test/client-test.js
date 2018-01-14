@@ -21,7 +21,6 @@ test('cliente', t => {
   const client = senagram.crearCliente()
 
   t.is(typeof client.getPicture, 'function')
-  t.is(typeof client.getPicture, 'function')
   t.is(typeof client.guardarPicture, 'function')
   t.is(typeof client.likePicture, 'function')
   t.is(typeof client.listaPicture, 'function')
@@ -42,9 +41,28 @@ test('getPicture', async t => {
 
   let result = await client.getPicture(imagen.publicId)
 
-  console.log(imagen)
+  t.deepEqual(imagen, result)
+})
 
-  console.log(result)
+test('guardarPicture', async t => {
+  const client = t.context.client
+
+  let token = 'xxx-xxx-xxx'
+  let imagen = fixtures.getImagen()
+  let newImagen = {
+    src: imagen.url,
+    description: imagen.description
+  }
+
+  nock(options.endpoints.pictures, {
+    reqheaders: {
+      'Authorization': `Bearer ${token}`
+    }
+  })
+  .post('/', newImagen)
+  .reply(201, imagen)
+
+  let result = await client.guardarPicture(newImagen, token)
 
   t.deepEqual(imagen, result)
 })
