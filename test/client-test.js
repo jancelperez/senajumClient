@@ -153,3 +153,22 @@ test('getUsuario', async t => {
 
   t.deepEqual(usuario, result)
 })
+
+test('autenticacion', async t => {
+  const client = t.context.client
+
+  let credenciales = {
+    username: 'Jancel',
+    password: 's3n4'
+  }
+
+  let token = 'xxx-xxx-xxx'
+
+  nock(options.endpoints.auth)
+    .post('/', credenciales)
+    .reply(200, token)
+
+  let result = await client.autenticar(credenciales.username, credenciales.password)
+
+  t.deepEqual(token, result)
+})
